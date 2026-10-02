@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Expand to SEA — Pipeline over Buzz</title>
+<title>Expand to SEA — Build pipeline engine, not buzz</title>
 
 <meta name="description" content="I help B2B tech companies entering Indonesia stop wasting budget and start generating consistent Sales Qualified Leads.">
 <meta name="keywords" content="Indonesia B2B tech, lead generation Indonesia, SQL, sales qualified leads, acquisition Indonesia, growth marketing Indonesia">
@@ -68,13 +68,13 @@ body {
 nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 100;
   display: flex; align-items: center; justify-content: space-between;
-  padding: 1.25rem 5%;
+  padding: 1rem 5%;
   background: rgba(247, 244, 239, 0.92);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid rgba(45,23,96,0.08);
 }
 .nav-logo { display: flex; align-items: center; text-decoration: none; flex-shrink: 0; }
-.nav-logo-img { height: 70px; width: auto; display: block; }
+.nav-logo-img { height: 140px; width: auto; display: block; }
 .nav-links { display: flex; align-items: center; gap: 2.5rem; }
 .nav-links a {
   font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase;
@@ -94,7 +94,7 @@ nav {
 #home {
   min-height: 100vh;
   display: flex; flex-direction: column; justify-content: center;
-  padding: 8rem 5% 5rem;
+  padding: 12rem 5% 5rem;
   position: relative; overflow: hidden;
 }
 .hero-map {
@@ -120,6 +120,7 @@ nav {
   color: var(--purple); max-width: 780px; margin-bottom: 2rem;
 }
 .hero-headline em { font-style: italic; color: var(--gold); }
+.hero-headline .line-2 { display: block; }
 .hero-sub {
   font-size: clamp(15px, 1.5vw, 18px);
   color: var(--text-muted); font-weight: 300;
@@ -208,12 +209,20 @@ section { padding: 7rem 5%; }
 .about-body p:last-child { margin-bottom: 0; }
 
 .about-name {
-  font-size: 12px;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--gold);
-  font-weight: 500;
-  margin-bottom: 1rem;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(38px, 4.5vw, 60px);
+  font-weight: 300;
+  line-height: 1.12;
+  color: var(--purple);
+  margin-bottom: 1.25rem;
+  letter-spacing: -0.01em;
+}
+.about-subline {
+  font-size: 15px;
+  color: var(--text-muted);
+  font-weight: 300;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
 }
 .about-actions {
   margin-top: 2rem;
@@ -275,6 +284,24 @@ section { padding: 7rem 5%; }
 .meta-val { font-family: 'Cormorant Garamond', serif; font-size: 18px; font-weight: 400; color: var(--purple); }
 
 #projects { background: var(--cream); }
+.projects-headline-lg {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(44px, 5.5vw, 72px);
+  font-weight: 300;
+  line-height: 1.1;
+  color: var(--purple);
+  margin-bottom: 0.75rem;
+  letter-spacing: -0.01em;
+}
+.projects-headline-sm {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px;
+  font-weight: 300;
+  font-style: italic;
+  line-height: 1.3;
+  color: var(--text-muted);
+  margin-bottom: 3rem;
+}
 .projects-carousel {
   display: flex; gap: 1.5rem;
   overflow-x: auto;
@@ -373,12 +400,15 @@ footer {
   .nav-links { display: none; }
   .hero-map { width: 70%; opacity: 0.04; }
   .project-card { flex: 0 0 calc(50% - 0.75rem); }
+  .nav-logo-img { height: 90px; }
 }
 @media (max-width: 600px) {
   section { padding: 5rem 6%; }
-  nav { padding: 1rem 6%; }
+  nav { padding: 0.75rem 6%; }
   .hero-actions, .about-actions { flex-direction: column; align-items: flex-start; }
   .project-card { flex: 0 0 100%; }
+  .nav-logo-img { height: 70px; }
+  #home { padding: 9rem 6% 5rem; }
 }
 </style>
 
@@ -421,7 +451,7 @@ footer {
   </div>
   <div class="hero-content">
     <div class="hero-label">Lead Generation for B2B Tech in Indonesia</div>
-    <h1 class="hero-headline reveal">Build pipeline engine, <em>not buzz</em></h1>
+    <h1 class="hero-headline reveal">Build pipeline engine<span class="line-2"><em>not buzz</em></span></h1>
     <p class="hero-sub reveal">I help B2B tech companies entering Indonesia stop wasting budget and start generating consistent SQLs.</p>
     <div class="hero-actions reveal">
       <a href="https://calendly.com/intan-khatulistiwa/new-meeting" class="btn-primary">Book a Call</a>
@@ -468,9 +498,9 @@ footer {
     </div>
   </div>
   <div class="about-body">
-    <div class="section-label">About</div>
-    <div class="about-name">Intan Khatulistiwa</div>
-    <h2 class="section-headline reveal">8+ years building growth engines inside Indonesian startups.</h2>
+    <div class="section-label">Meet</div>
+    <h2 class="about-name reveal">Intan Khatulistiwa</h2>
+    <p class="about-subline">8+ years building growth engines inside Indonesian startups</p>
     <div class="line-divider"></div>
     <p>I've spent 8+ years in growth marketing, leading acquisition at Indonesian startups across fintech, HR tech, SME tech/SaaS, eCommerce, and FMCG — from 0-to-1 and 1-to-100.</p>
     <p>I'm experimentation-driven and lead-gen driven. Not vanity metrics. I run lean, low-cost experiments across channels to find what actually generates SQLs.</p>
@@ -537,8 +567,8 @@ footer {
 
 <section id="projects">
   <div class="section-label">Past Projects</div>
-  <h2 class="section-headline reveal">What I've fixed.</h2>
-  <p class="section-sub reveal">Anonymized case studies from my time inside Indonesian startups.</p>
+  <h2 class="projects-headline-lg reveal">What I've fixed</h2>
+  <p class="projects-headline-sm reveal">Case studies from my time inside Indonesian startups</p>
   <div class="projects-carousel">
     <div class="project-card">
       <div class="project-industry">Enterprise</div>
