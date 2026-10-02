@@ -251,11 +251,8 @@ section { padding: 7rem 5%; }
   background: var(--white);
   border: 1px solid rgba(45,23,96,0.1);
   padding: 2.25rem;
-  text-decoration: none; color: inherit;
   display: flex; flex-direction: column;
-  transition: transform 0.2s, box-shadow 0.2s;
 }
-.project-card:hover { transform: translateY(-3px); box-shadow: 0 12px 40px rgba(45,23,96,0.08); }
 .project-industry {
   font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase;
   color: var(--gold); font-weight: 500; margin-bottom: 1rem;
@@ -265,21 +262,18 @@ section { padding: 7rem 5%; }
   color: var(--purple); line-height: 1.25; margin-bottom: 1.5rem;
 }
 .project-block { margin-bottom: 1rem; }
-.project-block:last-of-type { margin-bottom: 1.5rem; }
+.project-block:last-of-type { margin-bottom: 0; }
 .project-block-label {
   font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase;
   color: var(--text-muted); font-weight: 500; margin-bottom: 0.35rem;
 }
 .project-block-text { font-size: 13px; color: var(--text); font-weight: 300; line-height: 1.65; }
 .project-outcome { font-size: 13px; color: var(--purple); font-weight: 500; line-height: 1.65; }
-.project-arrow {
-  margin-top: auto; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase;
-  color: var(--gold); font-weight: 500;
-}
 .projects-hint {
   font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase;
   color: var(--text-muted); margin-top: 1.5rem; opacity: 0.6;
 }
+.projects-cta { margin-top: 2.5rem; text-align: center; }
 
 #insights { background: var(--cream-dark); }
 .insights-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-bottom: 3rem; }
@@ -373,7 +367,6 @@ footer {
 <section id="home">
   <div class="hero-map">
     <svg viewBox="0 0 1000 500" xmlns="http://www.w3.org/2000/svg">
-      <!-- Simplified Indonesia archipelago outline -->
       <path d="M 80,180 L 140,170 L 200,185 L 260,175 L 320,190 L 350,210 L 340,240 L 300,255 L 250,250 L 200,240 L 150,245 L 110,235 L 85,215 Z" />
       <path d="M 380,200 L 440,195 L 500,205 L 540,225 L 530,255 L 480,270 L 420,265 L 380,250 L 370,225 Z" />
       <path d="M 560,220 L 620,215 L 680,230 L 720,255 L 710,285 L 660,300 L 600,295 L 565,275 L 555,250 Z" />
@@ -495,7 +488,7 @@ footer {
   <h2 class="section-headline reveal">What I've fixed.</h2>
   <p class="section-sub reveal">Anonymized case studies from my time inside Indonesian startups.</p>
   <div class="projects-carousel">
-    <a href="/blog/case-enterprise.html" class="project-card">
+    <div class="project-card">
       <div class="project-industry">Enterprise</div>
       <h3 class="project-title">Focus replaced breadth. SQLs increased 4x.</h3>
       <div class="project-block">
@@ -510,14 +503,13 @@ footer {
         <div class="project-block-label">Outcome</div>
         <div class="project-outcome">Sales Qualified Leads increased 4x.</div>
       </div>
-      <div class="project-arrow">Read more →</div>
-    </a>
-    <a href="/blog/case-micro-business.html" class="project-card">
+    </div>
+    <div class="project-card">
       <div class="project-industry">Micro Business</div>
-      <h3 class="project-title">Cutting acquisition cost from 400K rupiah to below $1.</h3>
+      <h3 class="project-title">Cutting acquisition cost from $25 to below $1.</h3>
       <div class="project-block">
         <div class="project-block-label">Challenge</div>
-        <div class="project-block-text">Every new user went through a heavy in-house process — find, convince, educate, train. Cost per acquisition was around 400K rupiah, and activation took 2 weeks.</div>
+        <div class="project-block-text">Every new user went through a heavy in-house process — find, convince, educate, train. Cost per acquisition sat around $25, and activation took two weeks.</div>
       </div>
       <div class="project-block">
         <div class="project-block-label">Approach</div>
@@ -527,9 +519,8 @@ footer {
         <div class="project-block-label">Outcome</div>
         <div class="project-outcome">Cost per acquired user dropped below $1. Activation time: 3 days max.</div>
       </div>
-      <div class="project-arrow">Read more →</div>
-    </a>
-    <a href="/blog/case-smb.html" class="project-card">
+    </div>
+    <div class="project-card">
       <div class="project-industry">Small and Medium Business</div>
       <h3 class="project-title">Reduced churn from above 30% to below 15%.</h3>
       <div class="project-block">
@@ -544,10 +535,12 @@ footer {
         <div class="project-block-label">Outcome</div>
         <div class="project-outcome">Churn reduced from above 30% to below 15%.</div>
       </div>
-      <div class="project-arrow">Read more →</div>
-    </a>
+    </div>
   </div>
   <div class="projects-hint">Swipe to explore more cases →</div>
+  <div class="projects-cta">
+    <a href="/projects.html" class="btn-purple">See All Cases</a>
+  </div>
 </section>
 
 <section id="insights">
@@ -606,7 +599,6 @@ footer {
 </footer>
 
 <script>
-  // Reveal on scroll
   const reveals = document.querySelectorAll('.reveal');
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
